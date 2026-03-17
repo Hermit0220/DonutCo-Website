@@ -1,2 +1,33 @@
-# DonutCo Website
-🍩 DonutCo Website 📌 Project Overview DonutCo Website is a modern responsive web application designed for a donut shop to showcase its menu, promotions, and brand identity. The website provides an engaging user experience where customers can explore donut collections, view specials, and place orders online. The project demonstrates frontend web development, UI design, and integration with backend services for managing orders and customer interactions.  🎯 Objectives The main objectives of this project are: Create a visually appealing donut shop website Provide an easy way for customers to explore menu items Implement a modern responsive interface Simulate an online ordering experience Demonstrate full-stack web development skills  ✨ Features 🏠 Home Page Attractive hero section with featured donut Promotional banners and offers Customer reviews and ratings Call-to-action buttons (Explore Menu, Order Now)  📋 Menu Page Grid layout displaying available donuts Product cards with: Donut name Description Price Add to cart option  🎁 Specials Section Displays limited-time donut offers Promotional discounts and seasonal items  ℹ️ About Page Information about DonutCo Brand story and mission  📞 Contact Page Contact details Customer inquiry form  🛒 Ordering System Add donuts to cart View selected items Simulated order placement
+# 🍩 DonutCo Website
+
+## 📌 Project Overview 
+
+DonutCo Website is a modern responsive web application designed for a donut shop to showcase its menu, promotions, and brand identity. The website provides an engaging user experience where customers can explore donut collections, view specials, and place orders online. The project demonstrates frontend web development, UI design, and integration with backend services for managing orders and customer interactions.  
+
+## 🎯 Objectives 
+
+The main objectives of this project are: Create a visually appealing donut shop website Provide an easy way for customers to explore menu items Implement a modern responsive interface Simulate an online ordering experience Demonstrate full-stack web development skills  
+
+## ✨ Features 🏠 
+
+Home Page Attractive hero section with featured donut Promotional banners and offers Customer reviews and ratings Call-to-action buttons (Explore Menu, Order Now)  
+
+## 📋 Menu Page 
+
+Grid layout displaying available donuts Product cards with: Donut name Description Price Add to cart option  
+
+## 🎁 Specials Section 
+
+Displays limited-time donut offers Promotional discounts and seasonal items  
+
+## ℹ️ About Page
+
+Information about DonutCo Brand story and mission  
+
+## 📞 Contact Page 
+
+Contact details Customer inquiry form  
+
+## 🛒 Ordering System 
+
+Add donuts to cart View selected items Simulated order placement
