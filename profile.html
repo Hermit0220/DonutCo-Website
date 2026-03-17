@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Manage your DonutCo profile, view order history, and check your donut rewards." />
+  <title>Your Profile | DonutCo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="profile.css" />
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════ HEADER ═══════════════════════════════ -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-text">Donut<span class="logo-accent">Co</span></span>
+      </a>
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="menu.html" class="nav-link">Menu</a></li>
+          <li><a href="specials.html" class="nav-link">Specials</a></li>
+          <li><a href="reviews.html" class="nav-link">Reviews</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <a href="cart.html" class="cart-link">
+          <button class="icon-btn cart-btn" id="header-cart-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+              <path d="M3 6h18" />
+              <path d="M16 10a4 4 0 0 1-8 0" />
+            </svg>
+            <span class="cart-badge" id="cart-count">0</span>
+          </button>
+        </a>
+        <a href="profile.html" class="profile-link">
+          <button class="icon-btn active" id="header-profile-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
+          </button>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="profile-main">
+    <div class="profile-container">
+      
+      <!-- ─── Sidebar / User Info ─── -->
+      <aside class="profile-sidebar">
+        <div class="user-card">
+          <div class="user-avatar">
+            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" alt="User Avatar" />
+            <button class="edit-avatar">
+               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+            </button>
+          </div>
+          <h2 class="user-name">Alex Thompson</h2>
+          <p class="user-tier">Gold Member</p>
+          <div class="user-stats">
+            <div class="stat">
+              <span class="stat-val">24</span>
+              <span class="stat-label">Orders</span>
+            </div>
+            <div class="stat">
+              <span class="stat-val">1.2k</span>
+              <span class="stat-label">Points</span>
+            </div>
+          </div>
+        </div>
+
+        <nav class="profile-nav">
+          <a href="#" class="pro-nav-item active">
+             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+             Dashboard
+          </a>
+          <a href="#" class="pro-nav-item">
+             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+             Orders
+          </a>
+          <a href="#" class="pro-nav-item">
+             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+             Wishlist
+          </a>
+          <a href="#" class="pro-nav-item">
+             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+             Privacy
+          </a>
+          <hr />
+          <a href="#" class="pro-nav-item logout">
+             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+             Logout
+          </a>
+        </nav>
+      </aside>
+
+      <!-- ─── Main Content Area ─── -->
+      <div class="profile-content">
+        <div class="welcome-header">
+          <h1>Welcome back, <span class="title-accent">Alex.</span></h1>
+          <p>You're only 300 points away from a free Baker's Dozen!</p>
+        </div>
+
+        <div class="dashboard-grid">
+          <!-- Rewards Card -->
+          <div class="dash-card rewards-card">
+            <h3>Rewards Progress</h3>
+            <div class="progress-container">
+              <div class="progress-bar" style="width: 75%;"></div>
+            </div>
+            <div class="reward-info">
+              <span>750 / 1000 Pts</span>
+              <span class="next-reward">Free Cinnamon Roll</span>
+            </div>
+          </div>
+
+          <!-- Quick Actions -->
+          <div class="dash-card actions-card">
+            <h3>Quick Actions</h3>
+            <div class="action-buttons">
+              <button class="action-btn">Reorder Last</button>
+              <button class="action-btn outline">Track Order</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent Orders -->
+        <section class="recent-orders">
+          <div class="section-header">
+            <h2>Recent Orders</h2>
+            <a href="#" class="view-all">View All</a>
+          </div>
+          <div class="order-list">
+            <div class="order-tile">
+              <div class="order-id">#ORD-9921</div>
+              <div class="order-date">Oct 12, 2023</div>
+              <div class="order-status completed">Completed</div>
+              <div class="order-total">$24.50</div>
+              <button class="btn-details">Details</button>
+            </div>
+            <div class="order-tile">
+              <div class="order-id">#ORD-9844</div>
+              <div class="order-date">Sep 28, 2023</div>
+              <div class="order-status completed">Completed</div>
+              <div class="order-total">$18.20</div>
+              <button class="btn-details">Details</button>
+            </div>
+          </div>
+        </section>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="footer-columns">
+      <div class="footer-col">
+        <span class="footer-brand">Donut<span class="logo-accent">Co</span></span>
+        <p style="color: var(--gray-400); font-size: 0.95rem; margin-top: 1rem;">Award-winning artisanal donuts, delivered fresh to your door.</p>
+      </div>
+      <div class="footer-col">
+        <a href="#">Instagram</a>
+        <a href="#">Twitter</a>
+        <a href="#">TikTok</a>
+      </div>
+      <div class="footer-col">
+        <a href="about.html">Our Story</a>
+        <a href="legal.html#privacy">Privacy Policy</a>
+        <a href="about.html">About</a>
+      </div>
+      <div class="footer-col">
+        <a href="#">(555) 123-4567</a>
+        <a href="#">123 Donut Street<br>Sweet City, SC 90210</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Simple script to initialize badge
+    function updateBadge() {
+      const cart = JSON.parse(localStorage.getItem('donutCart')) || [];
+      const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+      const badge = document.getElementById('cart-count');
+      if (badge) badge.textContent = count;
+    }
+    updateBadge();
+  </script>
+</body>
+
+</html>

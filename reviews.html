@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Reviews | DonutCo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <style>
+        .reviews-hero {
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            background: radial-gradient(circle at bottom left, var(--magenta-soft) 0%, var(--white) 60%);
+        }
+        .reviews-grid {
+            max-width: 1100px;
+            margin: 0 auto 8rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            padding: 0 2rem;
+        }
+        .review-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 32px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--gray-100);
+            transition: var(--transition);
+        }
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+        .stars {
+            color: #FFD700;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        .review-text {
+            color: var(--gray-900);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+        .reviewer {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .reviewer-img {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--gray-100);
+        }
+        .reviewer-info h4 {
+            font-weight: 700;
+            font-size: 1rem;
+        }
+        .reviewer-info p {
+            font-size: 0.8rem;
+            color: var(--gray-400);
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🍩</span>
+                <span class="logo-text">Donut<span class="logo-accent">Co</span></span>
+            </a>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="menu.html" class="nav-link">Menu</a></li>
+                    <li><a href="specials.html" class="nav-link">Specials</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="cart.html"><button class="icon-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg><span class="cart-badge" id="cart-count">0</span></button></a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="reviews-hero">
+            <h1>Sweet <span class="title-accent">Stories.</span></h1>
+            <p>What our donut lovers are saying about us.</p>
+        </div>
+
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"The Blueberry Glaze is a life-changing experience. I've never had a donut so light and flavorful."</p>
+                <div class="reviewer">
+                    <img src="https://i.pravatar.cc/100?img=32" class="reviewer-img" alt="Sarah J.">
+                    <div class="reviewer-info">
+                        <h4>Sarah Jenkins</h4>
+                        <p>Verified Enthusiast</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"Ordered at 3 PM, had them at 3:25 PM. Still warm and the glaze was perfect. Best service in town!"</p>
+                <div class="reviewer">
+                    <img src="https://i.pravatar.cc/100?img=12" class="reviewer-img" alt="Marcus T.">
+                    <div class="reviewer-info">
+                        <h4>Marcus Thorne</h4>
+                        <p>Weekly Customer</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"DonutCo has become my go-to for office birthdays. They never disappoint and the presentation is top notch."</p>
+                <div class="reviewer">
+                    <img src="https://i.pravatar.cc/100?img=44" class="reviewer-img" alt="Elena R.">
+                    <div class="reviewer-info">
+                        <h4>Elena Rodriguez</h4>
+                        <p>Food Blogger</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const cart = JSON.parse(localStorage.getItem('donutCart')) || [];
+        document.getElementById('cart-count').textContent = cart.reduce((s, i) => s + i.quantity, 0);
+    </script>
+</body>
+</html>

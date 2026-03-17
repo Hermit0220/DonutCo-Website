@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="DonutCo – Artisanal donuts crafted with love. Explore our signature glazed creations and order for same-day delivery." />
+  <title>DonutCo – Artisanal Donuts Delivered Fresh</title>
+  <link rel=" menu" href="C:\Users\ThinkPad\Desktop\Projects\AntigravityProjects\menu.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════ HEADER ═══════════════════════════════ -->
+
+
+
+  <header class="site-header">
+    <div class="header-inner">
+
+      <!-- Logo -->
+      <a href="index.html" class="logo" id="logo-link">
+        <span class="logo-icon">🍩</span>
+        <span class="logo-text">Donut<span class="logo-accent">Co</span></span>
+      </a>
+
+      <!-- Navigation -->
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link active" id="nav-home">Home</a></li>
+          <li><a href="menu.html" class="nav-link" id="nav-menu">Menu</a></li>
+          <li><a href="specials.html" class="nav-link" id="nav-specials">Specials</a></li>
+          <li><a href="reviews.html" class="nav-link" id="nav-reviews">Reviews</a></li>
+          <li><a href="about.html" class="nav-link" id="nav-about">About</a></li>
+          <li><a href="contact.html" class="nav-link" id="nav-contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <div class="search-bar" id="search-bar">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8" />
+            <path d="m21 21-4.35-4.35" />
+          </svg>
+          <input type="text" placeholder="Search donuts…" class="search-input" id="search-input" />
+        </div>
+        <button class="icon-btn" id="btn-wishlist" aria-label="Wishlist">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path
+              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+          </svg>
+        </button>
+        <a href="profile.html" class="profile-link">
+          <button class="icon-btn" id="btn-user" aria-label="Profile">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
+          </button>
+        </a>
+        <a href="cart.html" class="cart-link">
+          <button class="icon-btn cart-btn" id="btn-cart" aria-label="Cart">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="9" cy="21" r="1" />
+              <circle cx="20" cy="21" r="1" />
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+            </svg>
+            <span class="cart-badge">0</span>
+          </button>
+        </a>
+        <a href="menu.html" class="order-link-header">
+           <button class="btn-order-header" id="btn-order-header">Order Now</button>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
+  <main class="hero-section">
+
+    <!-- Floating Organic Blob Background SVG -->
+    <div class="wave-bg">
+      <svg viewBox="0 0 900 900" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="blobGrad" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#FF4DA6" />
+            <stop offset="50%" stop-color="#E8007D" />
+            <stop offset="100%" stop-color="#9E0058" />
+          </radialGradient>
+        </defs>
+        <!-- Shapeless organic floating blob path -->
+        <path
+          d="M608.5,135.8C779.6,267.8,903.3,469.8,901.8,667.5C900.2,865.2,773.4,1058.5,618.3,1200.8C463.2,1343,279.8,1434.1,84.7,1463.3C-110.4,1492.5,-313.3,1459.8,-477.5,1340C-641.7,1220.3,-767.1,1013.4,-805.1,785.8C-843.1,558.1,-793.7,311.1,-641,180.9C-488.2,50.7,-244.1,37.3,-19.7,61.2C204.6,85.1,437.5,3.8,608.5,135.8Z"
+          transform="translate(450 450) scale(0.55)" fill="url(#blobGrad)" />
+        <!-- Soft accent glows -->
+        <circle cx="650" cy="250" r="140" fill="#FF70B8" opacity="0.20" />
+        <circle cx="200" cy="700" r="120" fill="#FF3D9A" opacity="0.16" />
+        <circle cx="450" cy="450" r="300" fill="#FF0090" opacity="0.05" />
+      </svg>
+    </div>
+
+    <!-- ─── LEFT PANEL ─── -->
+    <div class="hero-left">
+      <div class="hero-left-content">
+
+        <!-- Category tag -->
+        <div class="hero-tag">
+          <span class="tag-dot"></span>
+          <span>Signature Collection 2025</span>
+        </div>
+
+        <!-- Heading -->
+        <h1 class="hero-heading">
+          <span class="heading-thin">Taste the</span>
+          <span class="heading-bold">Perfect</span>
+          <span class="heading-italic">Donut.</span>
+        </h1>
+
+        <!-- Description -->
+        <p class="hero-desc">
+          Handcrafted with premium ingredients, glazed to perfection,
+          and delivered fresh to your door — every single time.
+        </p>
+
+        <!-- Social Proof -->
+        <div class="social-proof" id="social-proof">
+          <div class="avatars">
+            <img src="https://i.pravatar.cc/40?img=1" alt="Customer 1" class="avatar" />
+            <img src="https://i.pravatar.cc/40?img=5" alt="Customer 2" class="avatar" />
+            <img src="https://i.pravatar.cc/40?img=9" alt="Customer 3" class="avatar" />
+            <img src="https://i.pravatar.cc/40?img=12" alt="Customer 4" class="avatar" />
+          </div>
+          <div class="proof-text">
+            <div class="proof-stars">★★★★★</div>
+            <div class="proof-label"><strong>12,000+</strong> happy customers</div>
+          </div>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="hero-cta">
+          <button class="btn-primary" id="btn-explore" onclick="window.location.href='menu.html'">
+            <span>Explore Menu</span>
+            <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </button>
+          <button class="btn-secondary" id="btn-watch">
+            <span class="play-icon">▶</span>
+            <span>Watch Story</span>
+          </button>
+        </div>
+
+        <!-- Stats -->
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number">50+</span>
+            <span class="stat-label">Flavors</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-number">2h</span>
+            <span class="stat-label">Delivery</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Artisanal</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ─── RIGHT PANEL ─── -->
+    <div class="hero-right">
+
+      <!-- Product Showcase (Slider) -->
+      <div class="product-showcase" id="product-showcase">
+
+        <!-- Slides -->
+        <div class="slides-wrapper" id="slides-wrapper">
+
+          <!-- Slide 1 -->
+          <div class="slide active" id="slide-1">
+            <div class="product-card">
+              <img
+                src="C:\Users\ThinkPad\Desktop\Projects\AntigravityProjects\Properties\hero_donut_drip_1773499257269-removebg-preview.png"
+                alt="Strawberry Glazed Donut" class="donut-img" id="donut-strawberry" />
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="slide" id="slide-2">
+            <div class="product-card">
+              <img
+                src="C:\Users\ThinkPad\Desktop\Projects\AntigravityProjects\Properties\donut_chocolate_1773498866336-removebg-preview.png"
+                alt="Chocolate Glazed Donut" class="donut-img" id="donut-chocolate" />
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="slide" id="slide-3">
+            <div class="product-card">
+              <img
+                src="C:\Users\ThinkPad\Desktop\Projects\AntigravityProjects\Properties\donut_blueberry_1773499014099-removebg-preview.png"
+                alt="Blueberry Glazed Donut" class="donut-img" id="donut-blueberry" />
+            </div>
+          </div>
+
+        </div> <!-- End slides-wrapper -->
+
+        <!-- Floating Discount Badge -->
+        <div class="discount-badge" id="discount-badge">
+          <div class="badge-percent">20%</div>
+          <div class="badge-label">OFF Today</div>
+        </div>
+
+        <!-- Price Tag -->
+        <div class="price-tag" id="price-tag">
+          <span class="price-original">$8.99</span>
+          <span class="price-current">$7.19</span>
+        </div>
+
+      </div> <!-- End product-showcase -->
+
+      <!-- Slider Navigation -->
+      <div class="slider-nav" id="slider-nav">
+        <button class="slider-arrow arrow-prev" id="arrow-prev" aria-label="Previous donut">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M15 18l-6-6 6-6" />
+          </svg>
+        </button>
+        <div class="slider-dots" id="slider-dots">
+          <button class="dot active" id="dot-0" aria-label="Slide 1"></button>
+          <button class="dot" id="dot-1" aria-label="Slide 2"></button>
+          <button class="dot" id="dot-2" aria-label="Slide 3"></button>
+        </div>
+        <button class="slider-arrow arrow-next" id="arrow-next" aria-label="Next donut">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M9 18l6-6-6-6" />
+          </svg>
+        </button>
+      </div>
+
+    </div> <!-- End hero-right -->
+
+  </main>
+
+  <!-- Featured Strip (Infinite Marquee) -->
+  <div class="featured-strip">
+    <div class="strip-items">
+      <div class="strip-item">🍩 HANDCRAFTED DAILY</div>
+      <div class="strip-item">✨ 100% ARTISANAL</div>
+      <div class="strip-item">🍓 LOCALLY SOURCED</div>
+      <div class="strip-item">🚀 2-HOUR DELIVERY</div>
+      <div class="strip-item">🍩 FRESHLY BAKED</div>
+      <div class="strip-item">✨ PREMIUM TOPPINGS</div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════ FEATURES SECTION ══════════════════════ -->
+  <section class="features-section">
+    <div class="features-grid">
+      <div class="feature-item">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+          </svg>
+        </div>
+        <h3 class="feature-title">Locally Sourced</h3>
+        <p class="feature-desc">We use only premium, locally-sourced ingredients to craft perfect donuts every morning.
+        </p>
+      </div>
+
+      <div class="feature-item">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <polyline points="12 6 12 12 16 14" />
+          </svg>
+        </div>
+        <h3 class="feature-title">Baked Fresh Daily</h3>
+        <p class="feature-desc">No day-old pastries here. Our ovens run 24/7 to ensure maximum freshness for every bite.
+        </p>
+      </div>
+
+      <div class="feature-item">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <rect x="1" y="3" width="15" height="13" />
+            <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
+            <circle cx="5.5" cy="18.5" r="2.5" />
+            <circle cx="18.5" cy="18.5" r="2.5" />
+          </svg>
+        </div>
+        <h3 class="feature-title">Lightning Delivery</h3>
+        <p class="feature-desc">Craving something sweet? We deliver hot boxes straight to your door in under 30 minutes.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════ POPULAR DONUTS ══════════════════════ -->
+  <section class="popular-section">
+    <div class="section-header">
+      <h2 class="section-title">Customer <span class="title-accent">Favorites.</span></h2>
+      <a href="menu.html" class="view-all">View All Menu &rarr;</a>
+    </div>
+
+    <!-- Reusing the menu.css grid and card structure -->
+    <div class="product-grid">
+      <!-- Donut 1 -->
+      <div class="product-card">
+        <div class="image-placeholder img-strawberry"></div>
+        <h3 class="product-name">Strawberry Sprinkles</h3>
+        <p class="product-desc">Sweet pink glaze with classic rainbow sprinkles</p>
+        <div class="product-footer">
+          <span class="price">$2.50</span>
+          <button class="add-to-cart-btn btn-small">Add to Cart</button>
+        </div>
+      </div>
+
+      <!-- Donut 2 -->
+      <div class="product-card featured-popular">
+        <div class="image-placeholder img-chocolate"></div>
+        <h3 class="product-name">Chocolate Boom</h3>
+        <p class="product-desc">Rich double chocolate icing and sprinkles</p>
+        <div class="product-footer">
+          <span class="price">$3.00</span>
+          <button class="add-to-cart-btn btn-small">Add to Cart</button>
+        </div>
+      </div>
+
+      <!-- Donut 3 -->
+      <div class="product-card">
+        <div class="image-placeholder img-matcha"></div>
+        <h3 class="product-name">Matcha Delight</h3>
+        <p class="product-desc">Earthy green tea glaze with a hint of vanilla</p>
+        <div class="product-footer">
+          <span class="price">$3.00</span>
+          <button class="add-to-cart-btn btn-small">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════ NEWSLETTER CTA ══════════════════════ -->
+  <section class="newsletter-cta">
+    <div class="cta-content">
+      <div class="cta-badge">Join the Club!</div>
+      <h2 class="cta-title">Get 10% off your first box</h2>
+      <p class="cta-desc">Subscribe to our newsletter for exclusive flavors, secret menu drops, and sweet weekly deals.
+      </p>
+
+      <form class="cta-form" onsubmit="event.preventDefault();">
+        <input type="email" class="cta-input" placeholder="Enter your email address..." required>
+        <button type="submit" class="cta-button">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ══════════════════════ FOOTER ══════════════════════ -->
+  <footer class="site-footer">
+    <div class="footer-columns">
+      <div class="footer-col">
+        <span class="footer-brand">Donut<span class="logo-accent">Co</span></span>
+        <p style="color: var(--gray-400); font-size: 0.95rem; margin-top: 1rem;">Handcrafted artisanal donuts baked
+          fresh daily in the heart of the city.</p>
+      </div>
+      <div class="footer-col">
+        <a href="#">Instagram</a>
+        <a href="#">Twitter</a>
+        <a href="#">TikTok</a>
+      </div>
+      <div class="footer-col">
+        <a href="legal.html#privacy">Privacy Policy</a>
+        <a href="legal.html#terms">Terms of Service</a>
+        <a href="about.html">About</a>
+      </div>
+      <div class="footer-col">
+        <a href="#">(555) 123-4567</a>
+        <a href="#">123 Donut Street<br>Sweet City, SC 90210</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="index.js"></script>
+</body>
+
+</html>

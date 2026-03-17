@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Review your artisanal donut selection at DonutCo. Handcrafted happiness in every box." />
+  <title>Your Cart | DonutCo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="cart.css" />
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════ HEADER ═══════════════════════════════ -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-text">Donut<span class="logo-accent">Co</span></span>
+      </a>
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="menu.html" class="nav-link">Menu</a></li>
+          <li><a href="specials.html" class="nav-link">Specials</a></li>
+          <li><a href="reviews.html" class="nav-link">Reviews</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn cart-btn active" id="header-cart-btn">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+            <path d="M3 6h18" />
+            <path d="M16 10a4 4 0 0 1-8 0" />
+          </svg>
+          <span class="cart-badge" id="cart-count">0</span>
+        </button>
+        <button class="btn-order-header">Checkout</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="cart-main">
+    <div class="cart-container">
+      <div class="cart-left">
+        <div class="cart-header">
+          <h1>Your <span class="title-accent">Selection.</span></h1>
+          <p class="cart-subtitle">Review your artisanal treats before we bake them fresh for you.</p>
+        </div>
+
+        <div id="cart-items-container">
+          <!-- Dynamically populated by cart.js -->
+           <div class="cart-loader">Loading your treats...</div>
+        </div>
+
+        <div class="empty-cart-state" id="empty-cart-state" style="display: none;">
+          <div class="empty-icon">🍩</div>
+          <h2>Your cart is empty.</h2>
+          <p>Treat yourself to something sweet!</p>
+          <a href="menu.html" class="btn-primary">Browse Menu</a>
+        </div>
+      </div>
+
+      <aside class="cart-right">
+        <div class="order-summary-card">
+          <h3>Order Summary</h3>
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <span id="subtotal-price">$0.00</span>
+          </div>
+          <div class="summary-row">
+            <span>Shipping</span>
+            <span id="shipping-price">$5.00</span>
+          </div>
+          <div class="summary-row">
+            <span>Sales Tax</span>
+            <span id="tax-price">$0.00</span>
+          </div>
+          <hr />
+          <div class="summary-row total-row">
+            <span>Total</span>
+            <span id="total-price">$0.00</span>
+          </div>
+          <button class="btn-checkout-large" id="checkout-btn">Proceed to Payment</button>
+          <p class="summary-note">Free shipping on orders over $30!</p>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="footer-columns">
+      <div class="footer-col">
+        <span class="footer-brand">Donut<span class="logo-accent">Co</span></span>
+        <p style="color: var(--gray-400); font-size: 0.95rem; margin-top: 1rem;">Award-winning artisanal donuts, delivered fresh to your door.</p>
+      </div>
+      <div class="footer-col">
+        <a href="#">Instagram</a>
+        <a href="#">Twitter</a>
+        <a href="#">TikTok</a>
+      </div>
+      <div class="footer-col">
+        <a href="about.html">Our Story</a>
+        <a href="legal.html#privacy">Privacy Policy</a>
+        <a href="about.html">About</a>
+      </div>
+      <div class="footer-col">
+        <a href="#">(555) 123-4567</a>
+        <a href="#">123 Donut Street<br>Sweet City, SC 90210</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="cart.js"></script>
+</body>
+
+</html>
