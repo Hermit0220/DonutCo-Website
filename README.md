@@ -4,7 +4,9 @@
 
 DonutCo Website is a modern responsive web application designed for a donut shop to showcase its menu, promotions, and brand identity. The website provides an engaging user experience where customers can explore donut collections, view specials, and place orders online. The project demonstrates frontend web development, UI design, and integration with backend services for managing orders and customer interactions.  
 
-## 🎯 Objectives The main objectives of this project are: Create a visually appealing donut shop website Provide an easy way for customers to explore menu items Implement a modern responsive interface Simulate an online ordering experience Demonstrate full-stack web development skills  
+## 🎯 Objectives 
+
+The main objectives of this project are: Create a visually appealing donut shop website Provide an easy way for customers to explore menu items Implement a modern responsive interface Simulate an online ordering experience Demonstrate full-stack web development skills  
 
 ## ✨ Features 🏠 
 
