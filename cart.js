@@ -41,7 +41,7 @@
       itemEl.className = 'cart-item';
       itemEl.innerHTML = `
         <div class="item-image">
-          <img src="${item.image || 'Properties/hero_donut_drip_1773499257269-removebg-preview.png'}" 
+          <img src="${item.image || 'assets/hero_donut_drip_1773499257269-removebg-preview.png'}" 
                alt="${item.name}" 
                style="filter: ${item.filter || 'none'}">
         </div>
