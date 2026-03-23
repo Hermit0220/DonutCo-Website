@@ -13,10 +13,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const tabs = document.querySelectorAll('.tab');
     tabs.forEach(tab => {
         tab.addEventListener('click', () => {
-            // Remove active class from all
+            // Remove active class from all tabs
             tabs.forEach(t => t.classList.remove('active'));
             // Add to clicked
             tab.classList.add('active');
+            
+            // Hide all grids
+            document.querySelectorAll('.product-grid').forEach(grid => {
+                grid.style.display = 'none';
+            });
+            
+            // Show target grid
+            const target = tab.getAttribute('data-target');
+            if (target) {
+                const targetGrid = document.getElementById('grid-' + target);
+                if (targetGrid) {
+                    targetGrid.style.display = 'grid';
+                }
+            }
         });
     });
 

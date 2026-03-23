@@ -11,9 +11,9 @@
   const prevBtn  = document.getElementById('arrow-prev');
   const nextBtn  = document.getElementById('arrow-next');
   const donuts   = [
-    { name: 'Strawberry Bliss',  sub: 'Classic Ring • Rainbow Sprinkles', price: '$7.19', orig: '$8.99' },
-    { name: 'Dark Velvet',       sub: 'Premium Ring • Gold Flakes',        price: '$8.39', orig: '$9.99' },
-    { name: 'Berry Dream',       sub: 'Glazed Ring • Pearl Toppings',      price: '$7.59', orig: '$8.99' },
+    { name: 'Strawberry Bliss',  sub: 'Classic Ring • Rainbow Sprinkles', price: 'Rs. 2000', orig: 'Rs. 2500' },
+    { name: 'Dark Velvet',       sub: 'Premium Ring • Gold Flakes',       price: 'Rs. 2350', orig: 'Rs. 2800' },
+    { name: 'Berry Dream',       sub: 'Glazed Ring • Pearl Toppings',     price: 'Rs. 2100', orig: 'Rs. 2500' },
   ];
 
   let current = 0;
@@ -76,13 +76,65 @@
     }
   }, { passive: true });
 
-  /* ── Cart Badge Initialization ── */
   function updateBadge() {
-    const cart = JSON.parse(localStorage.getItem('donutCart')) || [];
-    const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+    let cart = [];
+    try {
+      const parsed = JSON.parse(localStorage.getItem('donutCart'));
+      if (Array.isArray(parsed)) cart = parsed;
+    } catch (e) {
+      console.error(e);
+    }
+    const count = cart.reduce((sum, item) => sum + (parseInt(item.quantity) || 0), 0);
     const badge = document.querySelector('.cart-badge');
     if (badge) badge.textContent = count;
   }
   updateBadge();
+
+  /* ── Add to Cart Buttons on Main Page ── */
+  const addBtns = document.querySelectorAll('.add-to-cart-btn');
+  addBtns.forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      const card = this.closest('.product-card');
+      const name = card.querySelector('.product-name').textContent;
+      // Extract numeric value from "Rs. 800"
+      const priceText = card.querySelector('.price').textContent;
+      const price = parseFloat(priceText.replace(/[^0-9.]/g, ''));
+      const quantity = 1;
+      const imageMatch = card.innerHTML.match(/img-([a-zA-Z0-9_-]+)/);
+      const imageClass = imageMatch ? imageMatch[1] : '';
+      let image = 'assets/hero_donut_drip_1773499257269-removebg-preview.png';
+      if (imageClass === 'chocolate') image = 'assets/donut_chocolate_1773498866336-removebg-preview.png';
+      else if (imageClass === 'matcha') image = 'assets/donut-base.png';
+
+      let cart = [];
+      try {
+        const parsed = JSON.parse(localStorage.getItem('donutCart'));
+        if (Array.isArray(parsed)) cart = parsed;
+      } catch (e) {
+        console.error(e);
+      }
+      const existingItem = cart.find(item => item.name === name);
+      
+      if (existingItem) {
+          existingItem.quantity += quantity;
+      } else {
+          cart.push({ name, price, quantity, image, filter: 'none' });
+      }
+      
+      localStorage.setItem('donutCart', JSON.stringify(cart));
+
+      const originalText = this.innerHTML;
+      this.textContent = 'Added!';
+      this.style.backgroundColor = '#4CAF50';
+      
+      updateBadge();
+
+      setTimeout(() => {
+          this.innerHTML = originalText;
+          this.style.backgroundColor = '';
+      }, 1000);
+    });
+  });
 
 })();

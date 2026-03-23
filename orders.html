@@ -4,18 +4,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Manage your DonutCo profile, view order history, and check your donut rewards." />
-  <title>Your Profile | DonutCo</title>
+  <meta name="description" content="View your past orders, track delivery, and quickly reorder your favorite DonutCo boxes and drinks." />
+  <title>Your Orders | DonutCo</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="index.css" />
   <link rel="stylesheet" href="profile.css" />
+  <style>
+    .order-history-grid { display: grid; gap: 1rem; }
+    .order-card { background: #fff; border: 1px solid #ebebeb; border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem; }
+    .order-card-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; padding-bottom: 1rem; }
+    .order-card-info h3 { margin: 0; font-size: 1.1rem; }
+    .order-card-info p { margin: 0.2rem 0 0; color: var(--gray-400); font-size: 0.9rem; }
+    .order-status.delivered { color: #4CAF50; background: #E8F5E9; padding: 4px 8px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; }
+    .order-status.processing { color: #FF9800; background: #FFF3E0; padding: 4px 8px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; }
+    .order-items { display: flex; flex-wrap: wrap; gap: 1rem; }
+    .order-item-chip { background: #f8f8f8; padding: 0.5rem 1rem; border-radius: 8px; font-size: 0.9rem; font-weight: 500; color: var(--gray-600); border: 1px solid #eee; }
+    .order-card-footer { display: flex; justify-content: space-between; align-items: center; padding-top: 1rem; border-top: 1px solid #eee; }
+    .order-card-total { font-weight: 700; font-size: 1.25rem; color: var(--text-dark); }
+    .btn-reorder { background-color: var(--primary-pink); color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 8px; font-weight: 600; cursor: pointer; transition: 0.2s; }
+    .btn-reorder:hover { background-color: var(--primary-pink-dark); }
+    .btn-track { background-color: white; color: var(--primary-pink); border: 1px solid var(--primary-pink); padding: 0.6rem 1.2rem; border-radius: 8px; font-weight: 600; cursor: pointer; transition: 0.2s; }
+  </style>
 </head>
 
 <body>
 
-  <!-- ═══════════════════════════════ HEADER ═══════════════════════════════ -->
   <header class="site-header">
     <div class="header-inner">
       <a href="index.html" class="logo">
@@ -33,7 +48,7 @@
       </nav>
       <div class="header-actions">
         <a href="cart.html" class="cart-link">
-          <button class="icon-btn cart-btn" id="header-cart-btn">
+          <button class="icon-btn cart-btn">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
               <path d="M3 6h18" />
@@ -43,7 +58,7 @@
           </button>
         </a>
         <a href="profile.html" class="profile-link">
-          <button class="icon-btn active" id="header-profile-btn">
+          <button class="icon-btn active">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
               <circle cx="12" cy="7" r="4" />
@@ -57,35 +72,14 @@
   <main class="profile-main">
     <div class="profile-container">
       
-      <!-- ─── Sidebar / User Info ─── -->
+      <!-- ─── Sidebar ─── -->
       <aside class="profile-sidebar">
-        <div class="user-card">
-          <div class="user-avatar">
-            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" alt="User Avatar" />
-            <button class="edit-avatar">
-               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
-            </button>
-          </div>
-          <h2 class="user-name">Alex Thompson</h2>
-          <p class="user-tier">Gold Member</p>
-          <div class="user-stats">
-            <div class="stat">
-              <span class="stat-val">24</span>
-              <span class="stat-label">Orders</span>
-            </div>
-            <div class="stat">
-              <span class="stat-val">1.2k</span>
-              <span class="stat-label">Points</span>
-            </div>
-          </div>
-        </div>
-
         <nav class="profile-nav">
-          <a href="#" class="pro-nav-item active">
+          <a href="profile.html" class="pro-nav-item">
              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
              Dashboard
           </a>
-          <a href="orders.html" class="pro-nav-item">
+          <a href="orders.html" class="pro-nav-item active">
              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
              Orders
           </a>
@@ -108,62 +102,84 @@
       <!-- ─── Main Content Area ─── -->
       <div class="profile-content">
         <div class="welcome-header">
-          <h1>Welcome back, <span class="title-accent">Alex.</span></h1>
-          <p>You're only 300 points away from a free Baker's Dozen!</p>
+          <h1>Order <span class="title-accent">History.</span></h1>
+          <p>Track your active orders and quickly reorder your past favorites.</p>
         </div>
 
-        <div class="dashboard-grid">
-          <!-- Rewards Card -->
-          <div class="dash-card rewards-card">
-            <h3>Rewards Progress</h3>
-            <div class="progress-container">
-              <div class="progress-bar" style="width: 75%;"></div>
-            </div>
-            <div class="reward-info">
-              <span>750 / 1000 Pts</span>
-              <span class="next-reward">Free Cinnamon Roll</span>
-            </div>
-          </div>
-
-          <!-- Quick Actions -->
-          <div class="dash-card actions-card">
-            <h3>Quick Actions</h3>
-            <div class="action-buttons">
-              <button class="action-btn">Reorder Last</button>
-              <button class="action-btn outline">Track Order</button>
-            </div>
+        <!-- Quick Actions -->
+        <div class="dash-card actions-card" style="margin-bottom: 2rem;">
+          <h3>Quick Actions</h3>
+          <div class="action-buttons">
+            <button class="action-btn">Reorder Last</button>
+            <button class="action-btn outline">Track Order</button>
           </div>
         </div>
 
-        <!-- Recent Orders -->
-        <section class="recent-orders">
-          <div class="section-header">
-            <h2>Recent Orders</h2>
-            <a href="#" class="view-all">View All</a>
-          </div>
-          <div class="order-list">
-            <div class="order-tile">
-              <div class="order-id">#ORD-9921</div>
-              <div class="order-date">Oct 12, 2023</div>
-              <div class="order-status completed">Completed</div>
-              <div class="order-total">Rs. 7200</div>
-              <button class="btn-details">Details</button>
+        <div class="order-history-grid">
+            <!-- Order 1 -->
+            <div class="order-card">
+              <div class="order-card-header">
+                  <div class="order-card-info">
+                      <h3>Order #ORD-9921</h3>
+                      <p>Oct 12, 2023 • 3 Items</p>
+                  </div>
+                  <div class="order-status delivered">Delivered</div>
+              </div>
+              <div class="order-items">
+                  <span class="order-item-chip">1x Dozen Box</span>
+                  <span class="order-item-chip">2x Iced Latte</span>
+              </div>
+              <div class="order-card-footer">
+                  <div class="order-card-total">Rs. 9800</div>
+                  <button class="btn-reorder">Reorder Box</button>
+              </div>
             </div>
-            <div class="order-tile">
-              <div class="order-id">#ORD-9844</div>
-              <div class="order-date">Sep 28, 2023</div>
-              <div class="order-status completed">Completed</div>
-              <div class="order-total">Rs. 5500</div>
-              <button class="btn-details">Details</button>
+
+            <!-- Order 2 -->
+            <div class="order-card">
+              <div class="order-card-header">
+                  <div class="order-card-info">
+                      <h3>Order #ORD-9844</h3>
+                      <p>Sep 28, 2023 • 2 Items</p>
+                  </div>
+                  <div class="order-status delivered">Delivered</div>
+              </div>
+              <div class="order-items">
+                  <span class="order-item-chip">1x Custom Gift Box</span>
+                  <span class="order-item-chip">1x Hot Mocha</span>
+              </div>
+              <div class="order-card-footer">
+                  <div class="order-card-total">Rs. 6100</div>
+                  <button class="btn-reorder">Reorder Box</button>
+              </div>
             </div>
-          </div>
-        </section>
+            
+            <!-- Order 3 -->
+            <div class="order-card">
+              <div class="order-card-header">
+                  <div class="order-card-info">
+                      <h3>Order #ORD-9755</h3>
+                      <p>Aug 15, 2023 • 4 Items</p>
+                  </div>
+                  <div class="order-status delivered">Delivered</div>
+              </div>
+              <div class="order-items">
+                  <span class="order-item-chip">2x Strawberry Sprinkles</span>
+                  <span class="order-item-chip">1x Matcha Delight</span>
+                  <span class="order-item-chip">1x Strawberry Smoothie</span>
+              </div>
+              <div class="order-card-footer">
+                  <div class="order-card-total">Rs. 3750</div>
+                  <button class="btn-reorder">Reorder Items</button>
+              </div>
+            </div>
+        </div>
+
       </div>
 
     </div>
   </main>
 
-  <!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
   <footer class="site-footer">
     <div class="footer-columns">
       <div class="footer-col">
@@ -188,7 +204,6 @@
   </footer>
 
   <script>
-    // Simple script to initialize badge
     function updateBadge() {
       const cart = JSON.parse(localStorage.getItem('donutCart')) || [];
       const count = cart.reduce((sum, item) => sum + item.quantity, 0);

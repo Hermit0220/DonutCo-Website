@@ -66,13 +66,13 @@
 
         <!-- Category Tabs -->
         <div class="tabs-container">
-            <button class="tab active">Donuts</button>
-            <button class="tab">Drinks</button>
-            <button class="tab">Boxes</button>
+            <button class="tab active" data-target="donuts">Donuts</button>
+            <button class="tab" data-target="drinks">Drinks</button>
+            <button class="tab" data-target="boxes">Boxes</button>
         </div>
 
-        <!-- Product Grid -->
-        <div class="product-grid">
+        <!-- Product Grid: Donuts -->
+        <div class="product-grid" id="grid-donuts">
             <!-- Normal Donut 1 -->
             <div class="product-card" data-image="assets/hero_donut_drip_1773499257269-removebg-preview.png"
                 data-filter="none">
@@ -80,7 +80,7 @@
                 <h3 class="product-name">Strawberry Sprinkles</h3>
                 <p class="product-desc">Sweet pink glaze with rainbow sprinkles</p>
                 <div class="product-footer">
-                    <span class="price">$2.50</span>
+                    <span class="price">Rs. 800</span>
                     <div class="card-controls">
                         <div class="qty-selector">
                             <button class="qty-btn minus">-</button>
@@ -93,8 +93,8 @@
             </div>
 
             <!-- Featured Donut 2 -->
-            <div class="product-card featured"
-                data-image="assets/donut_chocolate_1773498866336-removebg-preview.png" data-filter="none">
+            <div class="product-card featured" data-image="assets/donut_chocolate_1773498866336-removebg-preview.png"
+                data-filter="none">
                 <div class="featured-badge">Bestseller</div>
                 <div class="image-placeholder featured-placeholder img-chocolate"></div>
                 <h3 class="product-name">Chocolate Boom</h3>
@@ -116,7 +116,7 @@
                 <h3 class="product-name">Matcha Delight</h3>
                 <p class="product-desc">Earthy green tea glaze with a hint of vanilla</p>
                 <div class="product-footer">
-                    <span class="price">$3.00</span>
+                    <span class="price">Rs. 950</span>
                     <div class="card-controls">
                         <div class="qty-selector">
                             <button class="qty-btn minus">-</button>
@@ -135,7 +135,7 @@
                 <h3 class="product-name">Blueberry Burst</h3>
                 <p class="product-desc">Rich wild blueberry frosting</p>
                 <div class="product-footer">
-                    <span class="price">$2.50</span>
+                    <span class="price">Rs. 800</span>
                     <div class="card-controls">
                         <div class="qty-selector">
                             <button class="qty-btn minus">-</button>
@@ -154,7 +154,7 @@
                 <h3 class="product-name">Lemon Zest</h3>
                 <p class="product-desc">Tangy lemon glaze for a refreshing bite</p>
                 <div class="product-footer">
-                    <span class="price">$2.00</span>
+                    <span class="price">Rs. 600</span>
                     <div class="card-controls">
                         <div class="qty-selector">
                             <button class="qty-btn minus">-</button>
@@ -173,7 +173,7 @@
                 <h3 class="product-name">Vanilla Snow</h3>
                 <p class="product-desc">Classic vanilla icing with pearl sprinkles</p>
                 <div class="product-footer">
-                    <span class="price">$2.00</span>
+                    <span class="price">Rs. 600</span>
                     <div class="card-controls">
                         <div class="qty-selector">
                             <button class="qty-btn minus">-</button>
@@ -192,7 +192,7 @@
                 <h3 class="product-name">Caramel Pecan</h3>
                 <p class="product-desc">Topped with gooey caramel and roasted pecans</p>
                 <div class="product-footer">
-                    <span class="price">$3.50</span>
+                    <span class="price">Rs. 1100</span>
                     <div class="card-controls">
                         <div class="qty-selector">
                             <button class="qty-btn minus">-</button>
@@ -211,7 +211,7 @@
                 <h3 class="product-name">Raspberry Dream</h3>
                 <p class="product-desc">Tart and sweet raspberry glaze</p>
                 <div class="product-footer">
-                    <span class="price">$2.50</span>
+                    <span class="price">Rs. 800</span>
                     <div class="card-controls">
                         <div class="qty-selector">
                             <button class="qty-btn minus">-</button>
@@ -224,13 +224,12 @@
             </div>
 
             <!-- Normal Donut 9 -->
-            <div class="product-card" data-image="assets/donut-chocolate.png"
-                data-filter="none">
+            <div class="product-card" data-image="assets/donut-chocolate.png" data-filter="none">
                 <div class="image-placeholder img-classic"></div>
                 <h3 class="product-name">Classic Glazed</h3>
                 <p class="product-desc">The original honey glazed favorite</p>
                 <div class="product-footer">
-                    <span class="price">$1.50</span>
+                    <span class="price">Rs. 450</span>
                     <div class="card-controls">
                         <div class="qty-selector">
                             <button class="qty-btn minus">-</button>
@@ -242,6 +241,192 @@
                 </div>
             </div>
 
+        </div>
+
+        <!-- Product Grid: Drinks -->
+        <div class="product-grid" id="grid-drinks" style="display: none;">
+            <!-- Drink 1 -->
+            <div class="product-card" data-image="assets/drink_iced_latte_1774249916296.png" data-filter="none">
+                <style>
+                  .img-drink1 { background: url('assets/drink_iced_latte_1774249916296.png') center/cover no-repeat; }
+                </style>
+                <div class="image-placeholder img-drink1"></div>
+                <h3 class="product-name">Iced Latte</h3>
+                <p class="product-desc">Refreshing espresso over ice with milk</p>
+                <div class="product-footer">
+                    <span class="price">Rs. 900</span>
+                    <div class="card-controls">
+                        <div class="qty-selector">
+                            <button class="qty-btn minus">-</button>
+                            <span class="qty-num">1</span>
+                            <button class="qty-btn plus">+</button>
+                        </div>
+                        <button class="add-btn" aria-label="Add to cart">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Drink 2 -->
+            <div class="product-card" data-image="assets/drink_hot_mocha_1774249978521.png" data-filter="none">
+                <style>
+                  .img-drink2 { background: url('assets/drink_hot_mocha_1774249978521.png') center/cover no-repeat; }
+                </style>
+                <div class="image-placeholder img-drink2"></div>
+                <h3 class="product-name">Hot Mocha</h3>
+                <p class="product-desc">Rich hot chocolate mixed with espresso</p>
+                <div class="product-footer">
+                    <span class="price">Rs. 1100</span>
+                    <div class="card-controls">
+                        <div class="qty-selector">
+                            <button class="qty-btn minus">-</button>
+                            <span class="qty-num">1</span>
+                            <button class="qty-btn plus">+</button>
+                        </div>
+                        <button class="add-btn" aria-label="Add to cart">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Drink 3 -->
+            <div class="product-card" data-image="assets/drink_matcha_frappe_1774250008047.png" data-filter="none">
+                <style>
+                  .img-drink3 { background: url('assets/drink_matcha_frappe_1774250008047.png') center/cover no-repeat; }
+                </style>
+                <div class="image-placeholder img-drink3"></div>
+                <h3 class="product-name">Matcha Frappe</h3>
+                <p class="product-desc">Vibrant green matcha blended with ice</p>
+                <div class="product-footer">
+                    <span class="price">Rs. 1300</span>
+                    <div class="card-controls">
+                        <div class="qty-selector">
+                            <button class="qty-btn minus">-</button>
+                            <span class="qty-num">1</span>
+                            <button class="qty-btn plus">+</button>
+                        </div>
+                        <button class="add-btn" aria-label="Add to cart">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Drink 4 -->
+            <div class="product-card" data-image="assets/drink_strawberry_smoothie_1774250157557.png" data-filter="none">
+                <style>
+                  .img-drink4 { background: url('assets/drink_strawberry_smoothie_1774250157557.png') center/cover no-repeat; }
+                </style>
+                <div class="image-placeholder img-drink4"></div>
+                <h3 class="product-name">Strawberry Smoothie</h3>
+                <p class="product-desc">Freshly blended strawberries</p>
+                <div class="product-footer">
+                    <span class="price">Rs. 1200</span>
+                    <div class="card-controls">
+                        <div class="qty-selector">
+                            <button class="qty-btn minus">-</button>
+                            <span class="qty-num">1</span>
+                            <button class="qty-btn plus">+</button>
+                        </div>
+                        <button class="add-btn" aria-label="Add to cart">+</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Drink 5 -->
+            <div class="product-card" data-image="assets/drink_cold_brew_1774250310039.png" data-filter="none">
+                <style>
+                  .img-drink5 { background: url('assets/drink_cold_brew_1774250310039.png') center/cover no-repeat; }
+                </style>
+                <div class="image-placeholder img-drink5"></div>
+                <h3 class="product-name">Cold Brew</h3>
+                <p class="product-desc">Slow-steeped cold brew over ice</p>
+                <div class="product-footer">
+                    <span class="price">Rs. 850</span>
+                    <div class="card-controls">
+                        <div class="qty-selector">
+                            <button class="qty-btn minus">-</button>
+                            <span class="qty-num">1</span>
+                            <button class="qty-btn plus">+</button>
+                        </div>
+                        <button class="add-btn" aria-label="Add to cart">+</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Drink 6 -->
+            <div class="product-card" data-image="assets/drink_caramel_macchiato_1774250407620.png" data-filter="none">
+                <style>
+                  .img-drink6 { background: url('assets/drink_caramel_macchiato_1774250407620.png') center/cover no-repeat; }
+                </style>
+                <div class="image-placeholder img-drink6"></div>
+                <h3 class="product-name">Caramel Macchiato</h3>
+                <p class="product-desc">Espresso with vanilla and caramel drizzle</p>
+                <div class="product-footer">
+                    <span class="price">Rs. 1250</span>
+                    <div class="card-controls">
+                        <div class="qty-selector">
+                            <button class="qty-btn minus">-</button>
+                            <span class="qty-num">1</span>
+                            <button class="qty-btn plus">+</button>
+                        </div>
+                        <button class="add-btn" aria-label="Add to cart">+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Grid: Boxes -->
+        <div class="product-grid" id="grid-boxes" style="display: none;">
+            <!-- Box 1 -->
+            <div class="product-card" data-filter="none">
+                <div class="image-placeholder" style="background: #FFB6C1; display:flex; align-items:center; justify-content:center; color:white; font-weight:bold;">Box Image (Placeholder)</div>
+                <h3 class="product-name">Half Dozen Box</h3>
+                <p class="product-desc">6 assorted artisanal donuts</p>
+                <div class="product-footer">
+                    <span class="price">Rs. 4200</span>
+                    <div class="card-controls">
+                        <div class="qty-selector">
+                            <button class="qty-btn minus">-</button>
+                            <span class="qty-num">1</span>
+                            <button class="qty-btn plus">+</button>
+                        </div>
+                        <button class="add-btn" aria-label="Add to cart">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Box 2 -->
+            <div class="product-card" data-filter="none">
+                <div class="image-placeholder" style="background: #FF69B4; display:flex; align-items:center; justify-content:center; color:white; font-weight:bold;">Box Image (Placeholder)</div>
+                <h3 class="product-name">Dozen Box</h3>
+                <p class="product-desc">12 premium assorted donuts</p>
+                <div class="product-footer">
+                    <span class="price">Rs. 8000</span>
+                    <div class="card-controls">
+                        <div class="qty-selector">
+                            <button class="qty-btn minus">-</button>
+                            <span class="qty-num">1</span>
+                            <button class="qty-btn plus">+</button>
+                        </div>
+                        <button class="add-btn" aria-label="Add to cart">+</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Box 3 -->
+            <div class="product-card" data-filter="none">
+                <div class="image-placeholder" style="background: #FF1493; display:flex; align-items:center; justify-content:center; color:white; font-weight:bold;">Box Image (Placeholder)</div>
+                <h3 class="product-name">Custom Gift Box</h3>
+                <p class="product-desc">4 elegantly decorated donuts in a ribbon-tied box</p>
+                <div class="product-footer">
+                    <span class="price">Rs. 5000</span>
+                    <div class="card-controls">
+                        <div class="qty-selector">
+                            <button class="qty-btn minus">-</button>
+                            <span class="qty-num">1</span>
+                            <button class="qty-btn plus">+</button>
+                        </div>
+                        <button class="add-btn" aria-label="Add to cart">+</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 
@@ -258,7 +443,7 @@
             </div>
             <div class="footer-col">
                 <a href="#">(555) 123-4567</a>
-                <a href="#">123 Donut Street, Sweet City</a>
+                <a href="#">No. 45/2, Parliament Road<br>Rajagiriya, Sri Lanka</a>
             </div>
         </div>
     </footer>

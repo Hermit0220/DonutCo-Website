@@ -16,7 +16,7 @@
   const taxEl = document.getElementById('tax-price');
   const totalEl = document.getElementById('total-price');
 
-  const SHIPPING_FEE = 5.00;
+  const SHIPPING_FEE = 1500.00;
   const TAX_RATE = 0.08;
 
   function init() {
@@ -55,7 +55,7 @@
             <span class="qty-val">${item.quantity}</span>
             <button class="qty-btn" onclick="updateQty(${index}, 1)">+</button>
           </div>
-          <div class="item-price">$${(item.price * item.quantity).toFixed(2)}</div>
+          <div class="item-price">Rs. ${(item.price * item.quantity).toFixed(2)}</div>
           <button class="remove-item" onclick="removeItem(${index})" aria-label="Remove item">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M3 6h18m-2 0v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
@@ -74,9 +74,9 @@
     const tax = subtotal * TAX_RATE;
     const total = subtotal > 0 ? subtotal + tax + SHIPPING_FEE : 0;
 
-    subtotalEl.textContent = `$${subtotal.toFixed(2)}`;
-    taxEl.textContent = `$${tax.toFixed(2)}`;
-    totalEl.textContent = `$${total.toFixed(2)}`;
+    subtotalEl.textContent = `Rs. ${subtotal.toFixed(2)}`;
+    taxEl.textContent = `Rs. ${tax.toFixed(2)}`;
+    totalEl.textContent = `Rs. ${total.toFixed(2)}`;
   }
 
   window.updateQty = function (index, delta) {
