@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="View your saved and favorite donuts and drinks on your DonutCo Wishlist." />
+  <title>Your Wishlist | DonutCo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="profile.css" />
+  <style>
+    .wishlist-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1rem; }
+    .wishlist-card { background: #fff; border: 1px solid #ebebeb; border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.2s, box-shadow 0.2s; }
+    .wishlist-card:hover { transform: translateY(-5px); box-shadow: 0 12px 24px rgba(0,0,0,0.06); }
+    .wishlist-img-placeholder { height: 200px; display: flex; align-items: center; justify-content: center; background-color: #f7f7f7; color: var(--gray-400); font-weight: 500; position: relative; }
+    .wishlist-img-placeholder img { width: 100%; height: 100%; object-fit: contain; padding: 1rem; }
+    .wishlist-remove { position: absolute; top: 10px; right: 10px; background: white; border: none; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.1); color: var(--danger, #ff4d4f); }
+    .wishlist-info { padding: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem; flex-grow: 1; }
+    .wishlist-info h3 { margin: 0; font-size: 1.2rem; }
+    .wishlist-info p { margin: 0; color: var(--gray-500); font-size: 0.9rem; }
+    .wishlist-footer { display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 1rem; border-top: 1px solid #eee; }
+    .wishlist-price { font-weight: 700; font-size: 1.1rem; color: var(--text-dark); }
+    .btn-add-cart { background-color: var(--primary-pink); color: white; border: none; padding: 0.5rem 1rem; border-radius: 8px; font-weight: 600; cursor: pointer; transition: 0.2s; }
+    .btn-add-cart:hover { background-color: var(--primary-pink-dark); }
+  </style>
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-text">Donut<span class="logo-accent">Co</span></span>
+      </a>
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="menu.html" class="nav-link">Menu</a></li>
+          <li><a href="specials.html" class="nav-link">Specials</a></li>
+          <li><a href="reviews.html" class="nav-link">Reviews</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <a href="cart.html" class="cart-link">
+          <button class="icon-btn cart-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+              <path d="M3 6h18" />
+              <path d="M16 10a4 4 0 0 1-8 0" />
+            </svg>
+            <span class="cart-badge" id="cart-count">0</span>
+          </button>
+        </a>
+        <a href="profile.html" class="profile-link">
+          <button class="icon-btn active">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
+          </button>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="profile-main">
+    <div class="profile-container">
+      
+      <!-- ─── Sidebar ─── -->
+      <aside class="profile-sidebar">
+        <nav class="profile-nav">
+          <a href="profile.html" class="pro-nav-item">
+             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+             Dashboard
+          </a>
+          <a href="orders.html" class="pro-nav-item">
+             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+             Orders
+          </a>
+          <a href="wishlist.html" class="pro-nav-item active">
+             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+             Wishlist
+          </a>
+          <a href="#" class="pro-nav-item">
+             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+             Privacy
+          </a>
+          <hr />
+          <a href="#" class="pro-nav-item logout">
+             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+             Logout
+          </a>
+        </nav>
+      </aside>
+
+      <!-- ─── Main Content Area ─── -->
+      <div class="profile-content">
+        <div class="welcome-header">
+          <h1>Your <span class="title-accent">Wishlist.</span></h1>
+          <p>Save your favorite donuts, drinks, and boxes for quick ordering later!</p>
+        </div>
+
+        <div class="wishlist-grid">
+            <!-- Item 1 -->
+            <div class="wishlist-card">
+              <div class="wishlist-img-placeholder" style="background:#FFE4E1;">
+                  <button class="wishlist-remove"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+                  <img src="assets/donut_chocolate_1773498866336-removebg-preview.png" alt="Chocolate Boom">
+              </div>
+              <div class="wishlist-info">
+                  <h3>Chocolate Boom</h3>
+                  <p>Rich double chocolate icing and sprinkles</p>
+                  <div class="wishlist-footer">
+                      <span class="wishlist-price">Rs. 950</span>
+                      <button class="btn-add-cart">Add to Cart</button>
+                  </div>
+              </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="wishlist-card">
+              <div class="wishlist-img-placeholder" style="background:#FFF0F5;">
+                  <button class="wishlist-remove"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+                  <img src="assets/donut_blueberry_1773499014099-removebg-preview.png" alt="Blueberry Burst">
+              </div>
+              <div class="wishlist-info">
+                  <h3>Blueberry Burst</h3>
+                  <p>Rich wild blueberry frosting</p>
+                  <div class="wishlist-footer">
+                      <span class="wishlist-price">Rs. 800</span>
+                      <button class="btn-add-cart">Add to Cart</button>
+                  </div>
+              </div>
+            </div>
+            
+            <!-- Item 3 -->
+            <div class="wishlist-card">
+              <div class="wishlist-img-placeholder" style="background:#F0F8FF;">
+                  <button class="wishlist-remove"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+                  <img src="assets/drink_matcha_frappe_1774250008047.png" alt="Matcha Frappe">
+              </div>
+              <div class="wishlist-info">
+                  <h3>Matcha Frappe</h3>
+                  <p>Vibrant green matcha blended with ice</p>
+                  <div class="wishlist-footer">
+                      <span class="wishlist-price">Rs. 1300</span>
+                      <button class="btn-add-cart">Add to Cart</button>
+                  </div>
+              </div>
+            </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-columns">
+      <div class="footer-col">
+        <span class="footer-brand">Donut<span class="logo-accent">Co</span></span>
+        <p style="color: var(--gray-400); font-size: 0.95rem; margin-top: 1rem;">Award-winning artisanal donuts, delivered fresh to your door.</p>
+      </div>
+      <div class="footer-col">
+        <a href="#">Instagram</a>
+        <a href="#">Twitter</a>
+        <a href="#">TikTok</a>
+      </div>
+      <div class="footer-col">
+        <a href="about.html">Our Story</a>
+        <a href="legal.html#privacy">Privacy Policy</a>
+        <a href="about.html">About</a>
+      </div>
+      <div class="footer-col">
+        <a href="#">(555) 123-4567</a>
+        <a href="#">No. 45/2, Parliament Road<br>Rajagiriya, Sri Lanka</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function updateBadge() {
+      const cart = JSON.parse(localStorage.getItem('donutCart')) || [];
+      const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+      const badge = document.getElementById('cart-count');
+      if (badge) badge.textContent = count;
+    }
+    updateBadge();
+  </script>
+</body>
+
+</html>
