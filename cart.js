@@ -109,7 +109,64 @@
     const count = cart.reduce((sum, item) => sum + item.quantity, 0);
     if (cartCount) cartCount.textContent = count;
   }
-
   init();
+
+  // Checkout Confetti Logic
+  const checkoutBtn = document.getElementById('checkout-btn');
+
+  function handleCheckout() {
+    if (cart.length === 0) {
+      alert("Your cart is empty!");
+      return;
+    }
+    
+    // Trigger confetti
+    if (typeof confetti === 'function') {
+      const duration = 3000;
+      const end = Date.now() + duration;
+
+      (function frame() {
+        confetti({
+          particleCount: 5,
+          angle: 60,
+          spread: 55,
+          origin: { x: 0 },
+          colors: ['#FFB6C1', '#FF69B4', '#FF1493', '#FFFFFF']
+        });
+        confetti({
+          particleCount: 5,
+          angle: 120,
+          spread: 55,
+          origin: { x: 1 },
+          colors: ['#FFB6C1', '#FF69B4', '#FF1493', '#FFFFFF']
+        });
+
+        if (Date.now() < end) {
+          requestAnimationFrame(frame);
+        }
+      }());
+    }
+
+    // Optional: clear cart and redirect or show success
+    const oldBtnText = checkoutBtn.textContent;
+    checkoutBtn.textContent = 'Order Placed!';
+    checkoutBtn.style.backgroundColor = '#4CAF50';
+    checkoutBtn.disabled = true;
+
+    setTimeout(() => {
+      cart = [];
+      saveCart();
+      renderCart();
+      updateHeaderCount();
+      alert("Purchase completed successfully! Your donuts are on the way.");
+      checkoutBtn.textContent = oldBtnText;
+      checkoutBtn.style.backgroundColor = '';
+      checkoutBtn.disabled = false;
+    }, 4000);
+  }
+
+  if (checkoutBtn) {
+    checkoutBtn.addEventListener('click', handleCheckout);
+  }
 
 })();
